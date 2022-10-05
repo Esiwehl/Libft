@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isalpha.c                                       :+:    :+:            */
+/*   ft_isalnum.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/04 16:14:42 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/05 14:14:09 by ewehl         ########   odam.nl         */
+/*   Created: 2022/10/05 14:05:34 by ewehl         #+#    #+#                 */
+/*   Updated: 2022/10/05 14:32:39 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "libft.h"
-int ft_isalpha(int c)
+// int ft_isalpha(int c);
+// int ft_isdigit(int c);
+int ft_isalnum(int c)
 {
-	return ((c >= 'a' && c <= 'z')|| (c >= 'A' && c <= 'Z'));
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
 
-// #include <stdio.h>
 // #include <ctype.h>
-// int	main(void)
+// #include <stdio.h>
+// int main(void)
 // {
-// 	int test = '9';
-// 	printf("O: %i\n", isalpha(test));
-// 	printf("M: %i\n", ft_isalpha(test));
-// 	return (0);
+//     int test = '*';
+
+//     printf("O: %i\n", isalnum(test));
+//     printf("M: %i\n", ft_isalnum(test));
+//     return (0);
 // }

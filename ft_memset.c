@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isalpha.c                                       :+:    :+:            */
+/*   ft_memset.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/04 16:14:42 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/05 14:14:09 by ewehl         ########   odam.nl         */
+/*   Created: 2022/10/05 14:45:13 by ewehl         #+#    #+#                 */
+/*   Updated: 2022/10/05 14:49:04 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-int ft_isalpha(int c)
+//#include "libft.h"
+#include <stdio.h>
+void    *memset(void *b, int c, size_t len)
 {
-	return ((c >= 'a' && c <= 'z')|| (c >= 'A' && c <= 'Z'));
+
 }
 
-// #include <stdio.h>
-// #include <ctype.h>
-// int	main(void)
-// {
-// 	int test = '9';
-// 	printf("O: %i\n", isalpha(test));
-// 	printf("M: %i\n", ft_isalpha(test));
-// 	return (0);
-// }
+#include <string.h>
+int main(void)
+{
+    
+    return (0);
+}

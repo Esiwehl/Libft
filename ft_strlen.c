@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isalpha.c                                       :+:    :+:            */
+/*   ft_strlen.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/04 16:14:42 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/05 14:14:09 by ewehl         ########   odam.nl         */
+/*   Created: 2022/10/05 14:33:00 by ewehl         #+#    #+#                 */
+/*   Updated: 2022/10/05 14:44:28 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "libft.h"
-int ft_isalpha(int c)
+#include <stdio.h>
+size_t  ft_strlen(const char *s)
 {
-	return ((c >= 'a' && c <= 'z')|| (c >= 'A' && c <= 'Z'));
+    size_t idx;
+
+    idx = 0;
+    while(s[idx])
+        idx++;
+    return (idx);
 }
 
-// #include <stdio.h>
-// #include <ctype.h>
-// int	main(void)
+// #include <string.h>
+// int main(void)
 // {
-// 	int test = '9';
-// 	printf("O: %i\n", isalpha(test));
-// 	printf("M: %i\n", ft_isalpha(test));
-// 	return (0);
+//     char test[] = "uhfuafeiiudifanaejicenjeoe ijoafan";
+
+//     printf("O = %lu\n", strlen(test));
+//     printf("M = %lu\n", ft_strlen(test));
+
+//     return (0);
 // }

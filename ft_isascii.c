@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isalpha.c                                       :+:    :+:            */
+/*   ft_isascii.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/04 16:14:42 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/05 14:14:09 by ewehl         ########   odam.nl         */
+/*   Created: 2022/10/05 14:16:43 by ewehl         #+#    #+#                 */
+/*   Updated: 2022/10/05 14:32:30 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "libft.h"
-int ft_isalpha(int c)
+int ft_isascii(int c)
 {
-	return ((c >= 'a' && c <= 'z')|| (c >= 'A' && c <= 'Z'));
+	return ((c >= 0) && (c <= 127));
 }
 
-// #include <stdio.h>
 // #include <ctype.h>
-// int	main(void)
+// #include <stdio.h>
+// int main(void)
 // {
-// 	int test = '9';
-// 	printf("O: %i\n", isalpha(test));
-// 	printf("M: %i\n", ft_isalpha(test));
-// 	return (0);
+//     int test = 0140;
+
+//     printf("O: %i\n", isascii(test));
+//     printf("M: %i\n", ft_isascii(test));
+//     return (0);
 // }
