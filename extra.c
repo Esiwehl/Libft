@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 14:04:15 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/05 14:04:17 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/05 17:50:06 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,9 @@ int	ft_isupper(int c)
 		return (1);
 	else
 		return (0);
+}
+
+int ft_isspace(int c)
+{
+	return ((c >= 9 && c <= 13) || c == 32);
 }

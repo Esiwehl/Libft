@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 14:56:07 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/05 15:43:05 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/05 15:50:27 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,31 @@
 //int ft_isdigit(int c);
 #include <unistd.h>
 
-
 int ft_isspace(int c)
 {
-    return ((c >= 9 && c <= 13) || c == 32);
+	return ((c >= 9 && c <= 13) || c == 32);
 }
 
 int ft_atoi(const char *str)
 {
-    int idx;
-    int sign;
-    int num;
+	int idx;
+	int sign;
+	int num;
 
-    idx = 0;
-    num = 0;
-    sign = 1;
-    while (ft_isspace(str[idx]))
-        idx++;
-    if (str[idx] == '-' || str[idx] == '+')
-    {
-        if (str[idx] == '-')
-            sign *= -1;
-        idx++;
-    }
-    while (ft_isdigit(str[idx]))
-        num = num * 10 + (str[idx++] - '0');
-    return (num * sign);
+	idx = 0;
+	num = 0;
+	sign = 1;
+	while (ft_isspace(str[idx]))
+		idx++;
+	if (str[idx] == '-' || str[idx] == '+')
+	{
+		if (str[idx] == '-')
+			sign *= -1;
+		idx++;
+	}
+	while (ft_isdigit(str[idx]))
+		num = num * 10 + (str[idx++] - '0');
+	return (num * sign);
 }
 
 // #include <stdlib.h>
