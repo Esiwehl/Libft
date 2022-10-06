@@ -34,3 +34,4 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 //     printf("M: %d\n", strncmp(str1, str2, len));
 //     return (0);
 // }
+// CHECK WHAT HAPPENS IF |N| > STRLEN(S1|S2)
