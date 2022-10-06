@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 16:38:04 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/06 17:27:08 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/06 17:31:56 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void    *ft_memchr(const void *s, int c, size_t n)
     return (NULL);
 }
 
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-    char test[] = "Ik ben supercool.";
-    char t = '\0';
+// #include <string.h>
+// #include <stdio.h>
+// int main()
+// {
+//     char test[] = "Ik ben supercool.";
+//     char t = '\0';
     
-    printf("O: %s\n", memchr(test, t, sizeof(test)));
-    printf("M: %s\n", (unsigned char *)ft_memchr(test, t, sizeof(test)));
-    return (0);
-}
+//     printf("O: %s\n", memchr(test, t, sizeof(test)));
+//     printf("M: %s\n", (unsigned char *)ft_memchr(test, t, sizeof(test)));
+//     return (0);
+// }
