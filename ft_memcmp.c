@@ -26,16 +26,16 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
     return (cs1[idx] - cs2[idx]);
 }
 
-#include <string.h>
-int main()
-{
-    char test1[] = "CHEESE";
-    char test2[] = "CHEESe";
+// #include <string.h>
+// int main()
+// {
+//     char test1[] = "CHEESE";
+//     char test2[] = "CHEESe";
     
-    printf("O: %d\n", memcmp(test1, test2, sizeof(test1)));
-    printf("M: %d\n", ft_memcmp(test1, test2, sizeof(test1)));
-    return (0);
-}
+//     printf("O: %d\n", memcmp(test1, test2, sizeof(test1)));
+//     printf("M: %d\n", ft_memcmp(test1, test2, sizeof(test1)));
+//     return (0);
+// }
 
 /*              ALT WHILE
     printf("idx = %lu\tn = %lu\n", idx, n);
