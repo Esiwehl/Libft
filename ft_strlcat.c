@@ -22,14 +22,23 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (d_len + s_len);
 }
 
-#include <string.h>
-int main()
-{
-    char bigOne[11] = "Pinda";
-    char smallOne[] = "kaas";
+// #include <string.h>
+// int	main(void)
+// {
+// 	char	str1[] = "Some cool string.";
+// 	char	str2[] = " This is another cool string!";
+// 	//int		sizeRight = 50;	
+// 	int		sizeSmall = 12;
+// 	int		ret;
 
-    printf("old: %s\n", bigOne);
-    printf("O: %u\n", strlcat(bigOne, smallOne, sizeof(bigOne)));
-    printf("new: %s\n", bigOne);
-    //printf("M: %s", ft_strnstr(bigOne, smallOne, sizeof(bigOne)));
-}
+// 	char	buff[sizeSmall];
+
+// 	strcpy(buff, str1);
+// 	ret = ft_strlcat(buff, str2, sizeSmall);
+// 	//ret = strlcat(buff, str2, sizeRight);
+
+// 	puts(buff);
+// 	printf("Value of buff = %d\n", ret);
+// 	//printf("Official Strlcat returns: %d\n", ret);
+// 	return (0);
+// }
