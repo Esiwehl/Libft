@@ -35,12 +35,12 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
     return (0);
 }
 
-#include <string.h>
-int main()
-{
-    char bigOne[] = "thequickbrownfoxjumpedoverthelazydog";
-    char smallOne[] = "the";
+// #include <string.h>
+// int main()
+// {
+//     char bigOne[] = "thequickbrownfoxjumpedoverthelazydog";
+//     char smallOne[] = "the";
 
-    printf("O: %d", strnstr(bigOne, smallOne, sizeof(bigOne)));
-    printf("M: %s", ft_strnstr(bigOne, smallOne, sizeof(bigOne)));
-}
+//     printf("O: %d", strnstr(bigOne, smallOne, sizeof(bigOne)));
+//     printf("M: %s", ft_strnstr(bigOne, smallOne, sizeof(bigOne)));
+// }
