@@ -14,7 +14,7 @@
 //int ft_isdigit(int c);
 #include <unistd.h>
 
-int ft_isspace(int c)
+static int ft_isspace(int c)
 {
 	return ((c >= 9 && c <= 13) || c == 32);
 }
