@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_strlcat.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/09 17:48:20 by ewehl         #+#    #+#                 */
+/*   Updated: 2022/10/09 17:51:47 by ewehl         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 //#include "libft.h"
 #include <stdio.h>
-size_t  ft_strlen(char *str);
+size_t 	ft_strlen(const char *str);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -22,23 +34,23 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (d_len + s_len);
 }
 
-// #include <string.h>
-// int	main(void)
-// {
-// 	char	str1[] = "Some cool string.";
-// 	char	str2[] = " This is another cool string!";
-// 	//int		sizeRight = 50;	
-// 	int		sizeSmall = 12;
-// 	int		ret;
+#include <string.h>
+int	main(void)
+{
+	char	str1[] = "Some cool string.";
+	char	str2[] = " This is another cool string!";
+	// int		sizeSmall = 50;	
+	int		sizeSmall = 12;
+	int		ret;
 
-// 	char	buff[sizeSmall];
+	char	buff[sizeSmall];
 
-// 	strcpy(buff, str1);
-// 	ret = ft_strlcat(buff, str2, sizeSmall);
-// 	//ret = strlcat(buff, str2, sizeRight);
+	strcpy(buff, str1);
+	ret = ft_strlcat(buff, str2, sizeSmall);
+	// ret = strlcat(buff, str2, sizeSmall);
 
-// 	puts(buff);
-// 	printf("Value of buff = %d\n", ret);
-// 	//printf("Official Strlcat returns: %d\n", ret);
-// 	return (0);
-// }
+	puts(buff);
+	printf("Value of buff = %d\n", ret);
+	printf("Strlcat returns: %d\n", ret);
+	return (0);
+}
