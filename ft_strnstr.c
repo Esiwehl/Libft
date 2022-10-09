@@ -6,13 +6,13 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 18:02:30 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/06 18:05:44 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/09 17:44:16 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "libft.h"
 #include <stdio.h>
-size_t ft_strlen(char *str);
+size_t ft_strlen(const char *str);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -20,27 +20,27 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
     size_t idx;
 
     idx = 0;
-    n_len = ft_strlen((char *)needle);
+    n_len = ft_strlen(needle);
     if(needle[idx] == '\0')
         return ((char *)haystack);
-    if (ft_strlen((char *)haystack) < n_len)
-		return (0);
+    if (ft_strlen(haystack) < n_len)
+		return (NULL);
     while (idx <= (len - n_len))
 	{
 		if (haystack[idx] == needle[0])
-			if (ft_strncmp(haystack + idx, needle, n_len) == 0)
+			if (ft_strncmp(haystack + idx, needle, n_len -1) == 0)
 				return ((char *)(haystack + idx));
 		idx++;
 	}
-    return (0);
+    return (NULL);
 }
 
 // #include <string.h>
 // int main()
 // {
 //     char bigOne[] = "thequickbrownfoxjumpedoverthelazydog";
-//     char smallOne[] = "the";
+//     char smallOne[] = "thel";
 
-//     printf("O: %d", strnstr(bigOne, smallOne, sizeof(bigOne)));
-//     printf("M: %s", ft_strnstr(bigOne, smallOne, sizeof(bigOne)));
+//     printf("O: %s\n", strnstr(bigOne, smallOne, sizeof(bigOne)));
+//     printf("M: %s\n", ft_strnstr(bigOne, smallOne, sizeof(bigOne)));
 // }
