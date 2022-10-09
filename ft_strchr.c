@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 15:56:04 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/06 16:08:10 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/09 17:11:46 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char *ft_strchr(const char *s, int c)
 // int main()
 // {
 //     char test[] = "Ik ben supercool.";
-//     char t = 'd';
+//     char t = 'o';
     
 //     printf("O: %s\n", strchr(test, t));
 //     printf("M: %s\n", ft_strchr(test, t));

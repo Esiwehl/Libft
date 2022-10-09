@@ -1,7 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_strdup.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/09 18:26:55 by ewehl         #+#    #+#                 */
+/*   Updated: 2022/10/09 19:28:54 by ewehl         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include "lift.h"
 #include <stdio.h>
 #include <stdlib.h>
-size_t  ft_strlen(const char *str); 
-char    *ft_strdup(const char *s)
+
+size_t 	ft_strlen(const char *str); 
+char	*ft_strdup(const char *s)
 {
     char *nstr;
     int idx;
