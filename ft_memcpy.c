@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 17:50:43 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/06 15:54:40 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/11 15:47:12 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	t_dst = (unsigned char *) dst;
 	t_src = (unsigned char *) src;
 	if (!src && !dst) // Is this necessary thoo
-		return 0;
+		return (0);
 	while (idx < n)
 	{
 		t_dst[idx] = t_src[idx];
