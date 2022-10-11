@@ -6,14 +6,11 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 18:02:30 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/09 17:44:16 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/11 12:02:14 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdio.h>
-size_t ft_strlen(const char *str);
-int ft_strncmp(const char *s1, const char *s2, size_t n);
+#include "libft.h"
 char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
     size_t n_len;

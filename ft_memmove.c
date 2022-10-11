@@ -6,13 +6,11 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 12:51:12 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/06 16:33:09 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/11 11:56:23 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdio.h>
-void	*ft_memcpy(void *dst, const void *src, size_t n);
+#include "libft.h"
 void    *ft_memmove(void *dst, const void *src, size_t len)
 {
     unsigned char *t_dst;

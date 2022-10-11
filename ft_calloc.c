@@ -6,14 +6,11 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 18:26:37 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/09 19:29:23 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/11 12:03:22 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-void    *ft_bzero(void *s, size_t n);
+#include "libft.h"
 void    *ft_calloc(size_t nmemb, size_t size)
 {
 	void *ptr;

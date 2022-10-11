@@ -6,15 +6,11 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 19:27:32 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/09 19:50:03 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/11 12:31:06 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-
-size_t ft_strlen(const char *str);
+#include "libft.h"
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	s1_len;
@@ -50,8 +46,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 //     char *new;
 
 //     new = ft_strjoin(s1, s2);
-//     size_t len = ft_strlen(new);
+//		if (new)
+//     		size_t len = ft_strlen(new);
 //     printf("See if this works:: %s\n", new);
-//     printf("len = %lu", len);
+//     if (new)
+//     		printf("len = %lu", len);
 //     free(new);
 // }

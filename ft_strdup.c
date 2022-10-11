@@ -6,15 +6,11 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 18:26:55 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/09 19:28:54 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/11 12:02:59 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "lift.h"
-#include <stdio.h>
-#include <stdlib.h>
-
-size_t 	ft_strlen(const char *str); 
+#include "libft.h"
 char	*ft_strdup(const char *s)
 {
     char *nstr;

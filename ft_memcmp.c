@@ -6,12 +6,11 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 17:32:07 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/06 18:01:34 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/11 12:01:34 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdio.h>
+#include "libft.h"
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char *cs1;

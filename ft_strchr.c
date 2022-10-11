@@ -6,12 +6,11 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 15:56:04 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/09 17:11:46 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/11 11:58:55 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-
+#include "libft.h"
 char *ft_strchr(const char *s, int c)
 {
     while (*s)

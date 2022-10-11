@@ -6,14 +6,11 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 18:27:24 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/09 18:27:25 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/11 11:57:23 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdio.h>
-size_t  ft_strlen(const char *str);
-void	*ft_memcpy(void *dst, const void *src, size_t n);
+#include "libft.h"
 size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 {
 	size_t	s_len;
