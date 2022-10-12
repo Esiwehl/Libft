@@ -10,68 +10,93 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-size_t	get_limc(char const *s, char c)
+static int	is_delim(char s, char c)
 {
-	size_t idx;
-	size_t limc;
+	if (s == c)
+		return (1);
+	return (0);
+}
+
+static int	get_wordc(char const *s, char c)
+{
+	int	count;
+
+	count = 0;
+	while (*s)
+	{
+		while (*s && is_delim(*s, c))
+			s++;
+		if (*s && !is_delim(*s, c))
+		{
+			count++;
+			while (*s && !is_delim(*s, c))
+				s++;
+		}
+	}
+	return (count);
+}
+
+static char	*malloc_word(char const *s, char c)
+{
+	char	*word;
+	int		idx;
 
 	idx = 0;
-	limc = 0;
-	while (s[idx])
+	while (s[idx] && !is_delim(s[idx], c))
+		idx++;
+	word = malloc(sizeof(char) * (idx + 1));
+	if (!word)
+		return (NULL);
+	idx = 0;
+	while (s[idx] && !is_delim(s[idx], c))
 	{
-		if (s[idx] == c)
-			limc++;
+		word[idx] = s[idx];
 		idx++;
 	}
-	return (limc);
+	word[idx] = '\0';
+	return (word);
 }
 
-static char	*ft_strcdup(const char *s, size_t pos)
+char	**ft_split(char const *s, char c)
 {
-    char *nstr;
-    int idx;
-    int len;
+	char	**dest;
+	int		words;
+	int		x;
 
-    idx = 0;
-    len = (int)ft_strlen(s);
-    nstr = (char *)malloc((len + 1) * sizeof(char));
-    while (s[idx] != '\0')
-    {
-        nstr[idx] = s[idx];
-        idx++;
-    }
-    nstr[idx] = '\0';
-    return (nstr);
+	words = get_wordc(s, c);
+	dest = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!dest)
+		return (NULL);
+	x = 0;
+	while (*s)
+	{
+		while (*s && is_delim(*s, c))
+			s++;
+		if (*s && !is_delim(*s, c))
+		{
+			dest[x] = malloc_word(s, c);
+			x++;
+			while (*s && !is_delim(*s, c))
+				s++;
+		}
+	}
+	dest[x] = NULL;
+	return (dest);
 }
 
-char    **ft_split(char const *s, char c)
-{
-	char **arr;
-	size_t idx;
-	size_t len;
-	size_t pos;
+// int main()
+// {
+// 	char str[] = "__Deze_Zin___Moet_Worden_Gesplit";
+// 	char c = '_';
+// 	char **holder;
 
-	idx = 0;
-	len = get_limc(s, c);
-	arr = (char **)malloc(len * sizeof(char *) + 1);
-	 while (pos < len)
-	 {
-		arr[pos] = ft_strcdup();
-	 }
-	return (arr);
-}
-
-int main()
-{
-	char str[] = "Deze_Zin_Moet_Worden_Gesplit";
-	char c = '_';
-	char **holder;
-
-	holder = ft_split(str, c);
-	free(holder);
-}
+// 	holder = ft_split(str, c);
+// 	for (size_t i = 0; i< 5; i++)
+// 		printf("str[%lu] = %s\n", i, holder[i]);
+// 	free(holder);
+// }
 // get no. of words
 // get allocate mem for substr
 // put in split arr.
