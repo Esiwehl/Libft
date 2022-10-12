@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 18:01:50 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/12 19:20:13 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/12 19:27:28 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 //     int fd = 1;
 //     ft_putnbr_fd(x, fd);
 //     write(fd, "\t",1);
-//     ft_putendl_fd(s, fd);
+//     ft_putchar_fd(*s, fd);
+//     write(fd, "\n",1);
 // }
 
 // int main()
