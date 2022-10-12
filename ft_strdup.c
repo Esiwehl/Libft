@@ -6,27 +6,28 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 18:26:55 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/11 12:02:59 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/12 16:56:45 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strdup(const char *s)
 {
-    char *nstr;
-    int idx;
-    int len;
+	char	*nstr;
+	int		idx;
+	int		len;
 
-    idx = 0;
-    len = (int)ft_strlen(s);
-    nstr = (char *)malloc((len + 1) * sizeof(char));
-    while (s[idx] != '\0')
-    {
-        nstr[idx] = s[idx];
-        idx++;
-    }
-    nstr[idx] = '\0';
-    return (nstr);
+	idx = 0;
+	len = (int)ft_strlen(s);
+	nstr = (char *)malloc((len + 1) * sizeof(char));
+	while (s[idx] != '\0')
+	{
+		nstr[idx] = s[idx];
+		idx++;
+	}
+	nstr[idx] = '\0';
+	return (nstr);
 }
 
 // int main()
