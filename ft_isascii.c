@@ -6,12 +6,13 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 14:16:43 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/05 14:32:30 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/13 11:53:24 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-int ft_isascii(int c)
+#include "libft.h"
+
+int	ft_isascii(int c)
 {
 	return ((c >= 0) && (c <= 127));
 }

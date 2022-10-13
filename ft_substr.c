@@ -6,42 +6,40 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 18:26:31 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/09 19:28:24 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/13 17:51:49 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-size_t ft_strlen(const char *str);
+#include "libft.h"
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    char *substr;
-    size_t idx;
-    size_t pos;
+	char	*substr;
+	size_t	idx;
+	size_t	pos;
 
-    idx = 0;
-    pos = 0;
-    substr = (char *)malloc((len +1) * sizeof(char));
-    if (!substr || ((size_t)start + len)>= ft_strlen((s)))
-        return (NULL);
-    while (s[idx])
-    {
-        if (idx == (size_t) start)
-        {
-            while (pos <=len)
-            {
-                substr[pos++] = s[idx++];
-                if (pos == len)
-                {
-                    substr[pos] = '\0'; // Is it  even supposed to be null-terminated?!?!
-                    return (substr);
-                }
-            }
-        }
-        idx++;
-    }
-    return (NULL);
+	idx = 0;
+	pos = 0;
+	substr = (char *)malloc((len +1) * sizeof(char));
+	if (!substr || ((size_t)start + len) >= ft_strlen((s)))
+		return (NULL);
+	while (s[idx])
+	{
+		if (idx == (size_t) start)
+		{
+			while (pos <= len)
+			{
+				substr[pos++] = s[idx++];
+				if (pos == len)
+				{
+					substr[pos] = '\0';
+					return (substr);
+				}
+			}
+		}
+		idx++;
+	}
+	return (NULL);
 }
 
 // int main()

@@ -6,11 +6,11 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 16:13:43 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/05 14:03:21 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/13 11:53:45 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

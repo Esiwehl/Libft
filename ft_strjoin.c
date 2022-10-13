@@ -6,11 +6,12 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 19:27:32 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/11 12:31:06 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/13 12:19:16 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	s1_len;
@@ -21,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	idx = 0;
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	strj = (char *) malloc(s1_len + s2_len + 1);
+	strj = (char *)malloc(s1_len + s2_len + 1);
 	if (!strj)
 		return (NULL);
 	while (s1[idx])

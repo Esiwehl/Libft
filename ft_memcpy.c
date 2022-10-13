@@ -6,22 +6,22 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 17:50:43 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/11 15:47:12 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/13 12:06:47 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdio.h>
+#include "libft.h"
+
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char *t_dst;
-	unsigned char *t_src;
-	size_t idx;
+	unsigned char	*t_dst;
+	unsigned char	*t_src;
+	size_t			idx;
 
 	idx = 0;
 	t_dst = (unsigned char *) dst;
 	t_src = (unsigned char *) src;
-	if (!src && !dst) // Is this necessary thoo
+	if (!src && !dst)
 		return (0);
 	while (idx < n)
 	{
@@ -30,7 +30,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (t_dst);
 }
-
 
 // #include <string.h>
 // int	main(void)
@@ -59,8 +58,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 // 		printf("at = %d\n", s1[i]);
 // 	}
 // }
-
-
-//Pindakaas
-//akaas
-//as

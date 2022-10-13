@@ -6,24 +6,22 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 14:56:07 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/05 15:50:27 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/13 11:48:58 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-//int ft_isdigit(int c);
-#include <unistd.h>
+#include "libft.h"
 
-static int ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	return ((c >= 9 && c <= 13) || c == 32);
 }
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int idx;
-	int sign;
-	int num;
+	int	idx;
+	int	sign;
+	int	num;
 
 	idx = 0;
 	num = 0;

@@ -6,22 +6,23 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 12:51:12 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/12 10:38:36 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/13 12:11:29 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void    *ft_memmove(void *dst, const void *src, size_t len)
-{
-	unsigned char *t_dst;
-	unsigned char *t_src;
 
-	t_dst = (unsigned char*) dst;
-	t_src = (unsigned char*) src;
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	unsigned char	*t_dst;
+	unsigned char	*t_src;
+
+	t_dst = (unsigned char *) dst;
+	t_src = (unsigned char *) src;
 	if (!len)
 		return (dst);
 	if (dst <= src)
-		return(ft_memcpy(t_dst, t_src, len));
+		return (ft_memcpy(t_dst, t_src, len));
 	while (len--)
 		*(t_dst + (len)) = *(t_src + (len));
 	return (dst);

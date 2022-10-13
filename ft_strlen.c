@@ -6,20 +6,20 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 14:33:00 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/05 14:44:28 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/13 12:22:35 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdio.h>
-size_t  ft_strlen(const char *s)
-{
-    size_t idx;
+#include "libft.h"
 
-    idx = 0;
-    while(s[idx])
-        idx++;
-    return (idx);
+size_t	ft_strlen(const char *s)
+{
+	size_t	idx;
+
+	idx = 0;
+	while (s[idx])
+		idx++;
+	return (idx);
 }
 
 // #include <string.h>

@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 11:41:51 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/11 17:29:54 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/13 12:27:06 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 // 	char *trimmed;
 // 	char tobe[] = "strstrUntrimmedstrbmstrstrstr";
 // 	char set[] = "str";
-
+//
 // 	trimmed = ft_strtrim(tobe, set);
 // 	printf("Mstr = %s\n", trimmed);
 // 	free(trimmed);
 // }
 
 // What do i do if set is not in the str? Nothing..?
-// Should I deal with \n, \t, " "? Or simply mostly printable characters?
-// What if only the set is in my function? Should return NULL, is this handeled by Moulinette?
+// Should I deal with \n, \t, " "? 
+//		Or simply mostly printable characters?
+// What if only the set is in my function? 
+//		Should return NULL, is this handeled by Moulinette?
 // Is it case-sensitive?

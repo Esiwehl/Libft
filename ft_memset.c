@@ -6,18 +6,18 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 14:45:13 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/05 17:49:41 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/13 12:12:41 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdio.h>
-void    *ft_memset(void *b, int c, size_t len)
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t idx;
+	size_t			idx;
 	unsigned char	*dest;
 
-	dest = (unsigned char*) b;
+	dest = (unsigned char *) b;
 	idx = 0;
 	while (idx < len)
 	{

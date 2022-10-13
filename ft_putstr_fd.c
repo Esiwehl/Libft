@@ -6,18 +6,18 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 11:04:38 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/12 11:11:27 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/13 12:15:39 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t idx;
+	size_t	idx;
 
 	idx = 0;
-	while(s[idx])
+	while (s[idx])
 		write(fd, &s[idx++], 1);
 }
 

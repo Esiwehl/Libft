@@ -6,11 +6,13 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 16:15:02 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/05 14:03:02 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/13 12:29:33 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		c += ('a' - 'A');

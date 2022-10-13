@@ -6,15 +6,15 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 17:25:42 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/05 17:49:56 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/13 11:49:53 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdio.h>
-void    *ft_bzero(void *s, size_t n)
+#include "libft.h"
+
+void	*ft_bzero(void *s, size_t n)
 {
-	size_t idx;
+	size_t			idx;
 	unsigned char	*dest;
 
 	dest = (unsigned char *) s;

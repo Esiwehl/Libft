@@ -6,14 +6,13 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 14:05:34 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/05 14:32:39 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/13 11:52:32 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-// int ft_isalpha(int c);
-// int ft_isdigit(int c);
-int ft_isalnum(int c)
+#include "libft.h"
+
+int	ft_isalnum(int c)
 {
 	return (ft_isalpha(c) || ft_isdigit(c));
 }
