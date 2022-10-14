@@ -36,6 +36,9 @@
 *.x86_64
 *.hex
 
+# Me specified file
+extra.c
+
 # Debug files
 *.dSYM/
 *.su

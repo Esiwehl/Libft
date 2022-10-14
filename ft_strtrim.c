@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 11:41:51 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/13 12:27:06 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/14 19:25:41 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	idx = 0;
 	len = ft_strlen(s1);
 	s_len = ft_strlen(set);
-	if (!s1 || !set)
+	// printf("s_len = %lu\n", s_len);
+	if (!s1 || !set || !s_len)
 		return (NULL);
 	while (is_set((s1 + idx), set, s_len))
 		idx += s_len;
@@ -42,7 +43,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!new)
 		return (NULL);
 	ft_strlcpy(new, s1 + idx, len + 1);
-	printf("len = %lu\n", (ft_strlen(new)));
+	// printf("len = %lu\n", (ft_strlen(new)));
 	return (new);
 }
 
@@ -50,8 +51,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 // {
 // 	char *trimmed;
 // 	char tobe[] = "strstrUntrimmedstrbmstrstrstr";
-// 	char set[] = "str";
-//
+// 	// char tobe[] = "\0";
+// 	char set[] = "";
+
 // 	trimmed = ft_strtrim(tobe, set);
 // 	printf("Mstr = %s\n", trimmed);
 // 	free(trimmed);

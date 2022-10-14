@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 18:27:24 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/13 12:20:02 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/14 13:59:06 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 	else if (dsize != 0)
 	{
 		ft_memcpy(dst, src, dsize - 1);
-		dst[dsize - 1] = 0;
+		dst[dsize - 1] = '\0';
 	}
 	return (s_len);
 }

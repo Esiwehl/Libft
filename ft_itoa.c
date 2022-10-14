@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 11:47:46 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/13 17:48:27 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/14 19:27:46 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,33 +36,37 @@ char	*ft_itoa(int n)
 {
 	char	*numa;
 	int		len;
-	int		tmp_n;
+	// int		tmp_n;
 
 	len = get_len(&n);
-	numa = (char *)malloc(sizeof(char) * len + 1);
+	// printf("len = %i\n", len);
+	numa = (char *)malloc(sizeof(char) * (len + 1));
 	if (!numa)
 		return (NULL);
 	numa[len + 1] = '\0';
 	if (n < 0)
-		tmp_n = -n;
-	else
-		tmp_n = n;
+	{
+		n = -n;
+		numa[0] = '-';
+	}
+	// else
+	// 	tmp_n = n;
 	if (n == 0)
 		numa[0] = '0';
-	while (len-- > 0)
+	while (n && len-- > 0)
 	{
-		numa[len] = (tmp_n % 10) + '0';
-		tmp_n = tmp_n / 10;
-		printf("pos 0:: %c\n", numa[0]);
+		numa[len] = (n % 10) + '0';
+		n = n / 10;
+		// printf("pos 0:: %i\n", numa[0]);
 	}
-	if (n < 0)
-		numa[0] = '-';
+	// if (n < 0)
+	// 	numa[0] = '-';
 	return (numa);
 }
 
 // int main()
 // {
-// 	int x = -25;
+// 	int x = -10;
 // 	char *strx;
 // 	strx = ft_itoa(x);
 // 	printf("strx = %s\n", strx);
