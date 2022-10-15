@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	n_len = ft_strlen(needle);
 	if (needle[idx] == '\0')
 		return ((char *)haystack);
-	if (ft_strlen(haystack) < n_len)
+	if (ft_strlen(haystack) < n_len || !n_len)
 		return (NULL);
 	while (idx <= (len - n_len))
 	{
@@ -36,9 +36,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 // #include <string.h>
 // int main()
 // {
-//     char bigOne[] = "thequickbrownfoxjumpedoverthelazydog";
-//     char smallOne[] = "thel";
+//     // char bigOne[] = "thequickbrownfoxjumpedoverthelazydog";
+//     // char smallOne[] = "thel";
 
-//     printf("O: %s\n", strnstr(bigOne, smallOne, sizeof(bigOne)));
-//     printf("M: %s\n", ft_strnstr(bigOne, smallOne, sizeof(bigOne)));
+//     // printf("O: %s\n", strnstr(bigOne, smallOne, sizeof(bigOne)));
+//     // printf("M: %s\n", ft_strnstr(bigOne, smallOne, sizeof(bigOne)));
+//     printf("O: %s\n", strnstr("lorem ipsum dolor sit amet", "dolor", 0));
+//     printf("M: %s\n", ft_strnstr("lorem ipsum dolor sit amet", "dolor", 0));
 // }
+//			It's either !n_len || n_len == 0;
