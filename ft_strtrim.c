@@ -32,7 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = ft_strlen(s1);
 	s_len = ft_strlen(set);
 	// printf("s_len = %lu\n", s_len);
-	if (!s1 || !set || !s_len)
+	if (!s1 || !set)
 		return (NULL);
 	while (is_set((s1 + idx), set, s_len))
 		idx += s_len;
@@ -47,17 +47,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (new);
 }
 
-// int	main()
-// {
-// 	char *trimmed;
-// 	char tobe[] = "strstrUntrimmedstrbmstrstrstr";
-// 	// char tobe[] = "\0";
-// 	char set[] = "";
+int	main()
+{
+	char *trimmed;
+	char tobe[] = "lorem ipsum dolor sit amet";
+	// char tobe[] = "te";
+	char set[] = "te";
 
-// 	trimmed = ft_strtrim(tobe, set);
-// 	printf("Mstr = %s\n", trimmed);
-// 	free(trimmed);
-// }
+	trimmed = ft_strtrim(tobe, set);
+	printf("Mstr = %s\n", trimmed);
+	free(trimmed);
+}
 
 // What do i do if set is not in the str? Nothing..?
 // Should I deal with \n, \t, " "? 
