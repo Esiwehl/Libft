@@ -22,16 +22,16 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (s1[idx] - s2[idx]);
 }
 
-// #include <string.h>
-// int main()
-// {
-//     char str1[] = "Dit is een goed ";
-//     char str2[] = "Dit is een goed voorbeeld";
-//     size_t len = sizeof(str1);
-//     // size_t len = 6;
+#include <string.h>
+int main()
+{
+    char str1[] = "Dit is een goed ";
+    char str2[] = "Dit is een goed voorbeeld";
+    size_t len = sizeof(str1);
+    // size_t len = 6;
 
-//     printf("O: %d\n", ft_strncmp(str1, str2, len));
-//     printf("M: %d\n", strncmp(str1, str2, len));
-//     return (0);
-// }
+    printf("O: %d\n", ft_strncmp(str1, str2, len));
+    printf("M: %d\n", strncmp(str1, str2, len));
+    return (0);
+}
 // CHECK WHAT HAPPENS IF |N| > STRLEN(S1|S2)
