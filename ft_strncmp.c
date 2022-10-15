@@ -17,21 +17,18 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	idx;
 
 	idx = 0;
-	while ((s1[idx] == s2[idx]) && (idx < n))
+	if (n == 0)
+		return (0);
+	while ((s1[idx] == s2[idx]) && (idx < n - 1))
 		idx++;
-	return (s1[idx] - s2[idx]);
+	return ((unsigned char) s1[idx] - (unsigned char) s2[idx]);
+
 }
 
-#include <string.h>
-int main()
-{
-    char str1[] = "Dit is een goed ";
-    char str2[] = "Dit is een goed voorbeeld";
-    size_t len = sizeof(str1);
-    // size_t len = 6;
-
-    printf("O: %d\n", ft_strncmp(str1, str2, len));
-    printf("M: %d\n", strncmp(str1, str2, len));
-    return (0);
-}
-// CHECK WHAT HAPPENS IF |N| > STRLEN(S1|S2)
+// #include <string.h>
+// int main()
+// {
+//     printf("O: %d\n", strncmp("test\200", "test\0", 6));
+//     printf("M: %d\n", ft_strncmp("test\200", "test\0", 6));
+//     return (0);
+// }
