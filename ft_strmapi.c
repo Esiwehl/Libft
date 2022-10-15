@@ -19,14 +19,15 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*mapped;
 
 	idx = 0;
+	if (!s || !f)
+		return (NULL);
 	len = ft_strlen(s);
-	mapped = (char *)malloc((len * sizeof(char)) + 1);
+	mapped = (char *)malloc(((len + 1) * sizeof(char)));
 	if (!mapped)
 		return (NULL);
 	while (idx < len)
 	{
 		mapped[idx] = f(idx, s[idx]);
-		printf("%lu", idx);
 		idx++;
 	}
 	mapped[idx] = '\0';
