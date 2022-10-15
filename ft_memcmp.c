@@ -19,6 +19,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	size_t			idx;
 
 	idx = 0;
+	if (n == 0)
+		return (0);
 	cs1 = (unsigned char *) s1;
 	cs2 = (unsigned char *) s2;
 	while ((cs1[idx] == cs2[idx]) && (idx < n - 1))
@@ -29,22 +31,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 // #include <string.h>
 // int main()
 // {
-//     char test1[] = "CHEESE";
-//     char test2[] = "CHEESe";
-//
-//     printf("O: %d\n", memcmp(test1, test2, sizeof(test1)));
-//     printf("M: %d\n", ft_memcmp(test1, test2, sizeof(test1)));
+//     printf("O: %d\n", memcmp("zyxbcdefgh", "abcdefgxyz", 0));
+//     printf("M: %d\n", ft_memcmp("zyxbcdefgh", "abcdefgxyz", 0));
 //     return (0);
 // }
-//
-/*              ALT WHILE
-	printf("idx = %lu\tn = %lu\n", idx, n);
-	printf("cs1 = %c\tcs2 = %c\n", cs1[idx], cs2[idx]);
-	while(idx < n)
-	{
-		if (cs1[idx] != cs2[idx])
-			return (cs1[idx] - cs2[idx]);
-		idx++;
-	}
-	return (0);
-*/

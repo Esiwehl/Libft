@@ -12,79 +12,81 @@
 
 #include "libft.h"
 
-static int	is_delim(char s, char c)
-{
-	if (s == c)
-		return (1);
-	return (0);
-}
+// static int	is_delim(char s, char c)
+// {
+// 	return (s == c);
+// }
 
-static int	get_wordc(char const *s, char c)
-{
-	int	count;
+// static int	get_wordc(char const *s, char c)
+// {
+// 	int	count;
+// 	int idx;
 
-	count = 0;
-	while (*s)
-	{
-		while (*s && is_delim(*s, c))
-			s++;
-		if (*s && !is_delim(*s, c))
-		{
-			count++;
-			while (*s && !is_delim(*s, c))
-				s++;
-		}
-	}
-	return (count);
-}
+// 	idx = 0;
+// 	count = 0;
+// 	while (s[idx] != '\0')
+// 	{
+// 		while (s[idx] && is_delim(s[idx], c))
+// 			idx++;
+// 		if (s[idx] && !is_delim(s[idx], c))
+// 		{
+// 			count++;
+// 			while (s[idx] && !is_delim(s[idx], c))
+// 				idx++;
+// 		}
+// 	}
+// 	return (count);
+// }
 
-static char	*malloc_word(char const *s, char c)
-{
-	char	*word;
-	int		idx;
+// static char	*malloc_word(char const *s, char c)
+// {
+// 	char	*word;
+// 	int		idx;
 
-	idx = 0;
-	while (s[idx] && !is_delim(s[idx], c))
-		idx++;
-	word = malloc(sizeof(char) * (idx + 1));
-	if (!word)
-		return (NULL);
-	idx = 0;
-	while (s[idx] && !is_delim(s[idx], c))
-	{
-		word[idx] = s[idx];
-		idx++;
-	}
-	word[idx] = '\0';
-	return (word);
-}
+// 	idx = 0;
+// 	while (s[idx] && !is_delim(s[idx], c))
+// 		idx++;
+// 	word = malloc(sizeof(char) * (idx + 1));
+// 	if (!word)
+// 		return (NULL);
+// 	idx = 0;
+// 	while (s[idx] && !is_delim(s[idx], c))
+// 	{
+// 		word[idx] = s[idx];
+// 		idx++;
+// 	}
+// 	word[idx] = '\0';
+// 	return (word);
+// }
 
-char	**ft_split(char const *s, char c)
-{
-	char	**dest;
-	int		words;
-	int		x;
+// char	**ft_split(char const *s, char c)
+// {
+// 	char	**dest;
+// 	int		words;
+// 	int		idx;
+// 	int		x;
 
-	words = get_wordc(s, c);
-	dest = (char **)malloc(sizeof(char *) * (words + 1));
-	if (!dest)
-		return (NULL);
-	x = 0;
-	while (*s)
-	{
-		while (*s && is_delim(*s, c))
-			s++;
-		if (*s && !is_delim(*s, c))
-		{
-			dest[x] = malloc_word(s, c);
-			x++;
-			while (*s && !is_delim(*s, c))
-				s++;
-		}
-	}
-	dest[x] = NULL;
-	return (dest);
-}
+// 	words = get_wordc(s, c);
+// 	dest = (char **)malloc(sizeof(char *) * (words + 1));
+// 	if (!dest)
+// 		return (NULL);
+// 	idx = 0;
+// 	x = 0;
+// 	while (s[idx] != '\0')
+// 	{
+// 		while (s[idx] && is_delim(s[idx], c))
+// 			s++;
+// 		if (s[idx] && !is_delim(s[idx], c))
+// 		{
+// 			dest[x] = malloc_word(&s[idx], c);
+// 			x++;
+// 			while (s[idx] && !is_delim(s[idx], c))
+// 				s++;
+// 		}
+// 	}
+// 	dest[x] = NULL;
+// 	return (dest);
+// }
 
 // int main()
 // {
