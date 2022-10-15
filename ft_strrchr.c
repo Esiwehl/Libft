@@ -14,25 +14,24 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*last;
+	size_t	len;
 
-	last = 0;
-	while (*s != '\0')
+	len = ft_strlen(s);
+	while (len > 0)
 	{
-		if (*s == c)
-			last = (char *) s;
-		s++;
+		if (s[len] == c)
+			return((char *) &s[len]);
+		len--;
 	}
-	return (last);
+	return (NULL);
 }
 
 // #include <string.h>
-// #include <stdio.h>
 // int main()
 // {
 //     char test[] = "Ik ben supercool.";
-//     char t = 'c';
-//
+//     char t = '\0';
+
 //     printf("O: %s\n", strrchr(test, t));
 //     printf("M: %s\n", ft_strrchr(test, t));
 //     return (0);
