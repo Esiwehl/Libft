@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 18:02:30 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/13 12:25:04 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/16 18:18:44 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	n_len;
-	size_t	idx;
+	int	n_len;
+	int	idx;
 
 	idx = 0;
 	n_len = ft_strlen(needle);
+	if ((int) len < 0)
+		len = ft_strlen(haystack);
 	if (needle[idx] == '\0')
 		return ((char *)haystack);
-	if (ft_strlen(haystack) < n_len || !n_len)
+	if (!(int)len || (int)ft_strlen(haystack) < n_len)
 		return (NULL);
-	while (idx <= (len - n_len))
+	while (idx <= ((int)len - n_len) && *haystack)
 	{
 		if (haystack[idx] == needle[0])
-			if (ft_strncmp(haystack + idx, needle, n_len -1) == 0)
+			if (ft_strncmp(haystack + idx, needle, n_len) == 0)
 				return ((char *)(haystack + idx));
 		idx++;
 	}
@@ -36,12 +38,13 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 // #include <string.h>
 // int main()
 // {
-//     // char bigOne[] = "thequickbrownfoxjumpedoverthelazydog";
-//     // char smallOne[] = "thel";
+//     char bigOne[] = "thequickbrownfoxjumpedoverthelazydog";
+//     char smallOne[] = "foxj";
 
-//     // printf("O: %s\n", strnstr(bigOne, smallOne, sizeof(bigOne)));
-//     // printf("M: %s\n", ft_strnstr(bigOne, smallOne, sizeof(bigOne)));
-//     printf("O: %s\n", strnstr("lorem ipsum dolor sit amet", "dolor", 0));
-//     printf("M: %s\n", ft_strnstr("lorem ipsum dolor sit amet", "dolor", 0));
+//     printf("O: %s\n", strnstr(bigOne, smallOne, -1));
+//     printf("M: %s\n", ft_strnstr(bigOne, smallOne, -1));
+//     // printf("O: %s\n", strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE",
+// 	//						ft_strlen("MZIRIBMZE")));
+//     // printf("M: %s\n", ft_strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE",
+// 	//						ft_strlen("MZIRIBMZE")));
 // }
-//			It's either !n_len || n_len == 0;

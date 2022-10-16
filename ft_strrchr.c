@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 15:56:04 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/13 12:26:12 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/16 17:27:54 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	len;
 
 	len = ft_strlen(s);
-	while (len > 0)
+	while ((int) len >= 0)
 	{
-		if (s[len] == c)
-			return((char *) &s[len]);
+		if (s[len] == (unsigned char) c)
+			return ((char *) &s[len]);
 		len--;
 	}
 	return (NULL);
@@ -29,10 +29,10 @@ char	*ft_strrchr(const char *s, int c)
 // #include <string.h>
 // int main()
 // {
-//     char test[] = "Ik ben supercool.";
-//     char t = '\0';
-
-//     printf("O: %s\n", strrchr(test, t));
-//     printf("M: %s\n", ft_strrchr(test, t));
+//     char *src = "bonjourno";
+//     char *d1 = strrchr(src, '\0');
+//     char *d2 = ft_strrchr(src, '\0');
+// 		printf("O:: %s\n", d1);
+// 		printf("M:: %s\n", d2);
 //     return (0);
 // }
