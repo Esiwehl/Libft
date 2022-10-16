@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 18:26:55 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/12 16:56:45 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/16 12:48:18 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strdup(const char *s)
 	idx = 0;
 	len = (int)ft_strlen(s);
 	nstr = (char *)malloc((len + 1) * sizeof(char));
+	if (!nstr)
+		return (NULL);
 	while (s[idx] != '\0')
 	{
 		nstr[idx] = s[idx];

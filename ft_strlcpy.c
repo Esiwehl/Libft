@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 18:27:24 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/14 13:59:06 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/16 15:30:26 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 	if (!dst || !src)
 		return (0);
 	s_len = ft_strlen(src);
-	if (s_len + 1 < dsize) // THIS DOESNT MAKE ANY SENSE?
+	if (s_len + 1 < dsize)
 		ft_memcpy(dst, src, s_len + 1);
 	else if (dsize != 0)
 	{
