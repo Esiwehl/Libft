@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 17:31:38 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/19 17:13:21 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/19 20:20:53 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,26 @@ static char	*malloc_word(char const *s, char c)
 	return (word);
 }
 
+// static void	free_me(char const *s, char **dest, char c, int *idx, int *x)
+// {
+// 	while (s[*idx] && is_delim(s[*idx], c))
+// 		s++;
+// 	if (s[*idx] && !is_delim(s[*idx], c))
+// 	{
+// 		dest[*x] = malloc_word(&s[*idx], c);
+// 		if (dest[*x] == NULL)
+// 		{
+// 			while ((*x)--)
+// 				free(dest[x]);
+// 			free(dest);
+// 			return (NULL);
+// 		}
+// 		(*x)++;
+// 		while (s[*idx] && !is_delim(s[*idx], c))
+// 			s++;
+// 	}
+// }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**dest;
@@ -74,11 +94,19 @@ char	**ft_split(char const *s, char c)
 	x = 0;
 	while (s[idx] != '\0')
 	{
+		// free_me(s, dest, c, idx, x);
 		while (s[idx] && is_delim(s[idx], c))
 			s++;
 		if (s[idx] && !is_delim(s[idx], c))
 		{
 			dest[x] = malloc_word(&s[idx], c);
+			if (dest[x] == NULL)
+			{
+				while (x--)
+					free(dest[x]);
+				free(dest);
+				return (NULL);
+			}
 			x++;
 			while (s[idx] && !is_delim(s[idx], c))
 				s++;

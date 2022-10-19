@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 18:27:24 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/16 15:30:26 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/19 17:46:30 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 	return (s_len);
 }
 
-//int	main(void)
-//{
-//	char	str1[] = "Test string 1";
-//	char	str2[] = "String 2 test.";
-//	char 	dest[] = "Kaas";
-//	char 	dest2[] = "Ik wil ook kaas.";
-//	unsigned int 	num = 5;
-//	unsigned int 	num2 = 16;
-//
-//	printf("Length of str1 = %u\n", ft_strlcpy(dest, str1, num));
-//	printf("Dest = %s\n", dest);
-//	printf("Length of str2 = %u\n", ft_strlcpy(dest2, str2, num2));
-//	printf("Dest2 = %s\n", dest2);
-//	return (0);
-//}
+// int	main(void)
+// {
+// 	// char	str1[] = "Test string 1";
+// 	// char	str2[] = "String 2 test.";
+// 	// char 	dest[] = "Kaas";
+// 	// char 	dest2[] = "Ik wil ook kaas.";
+// 	// unsigned int 	num = 5;
+// 	// unsigned int 	num2 = 16;
+
+// 	// printf("Length of str1 = %u\n", ft_strlcpy(dest, str1, num));
+// 	// printf("Dest = %s\n", dest);
+// 	// printf("Length of str2 = %u\n", ft_strlcpy(dest2, str2, num2));
+// 	printf("len ", ft_strlcpy(((void *)0), ((void *)0), 10));
+// 	return (0);
+// }
