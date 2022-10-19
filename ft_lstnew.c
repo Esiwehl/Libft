@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strchr.c                                        :+:    :+:            */
+/*   ft_lstnew.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/06 15:56:04 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/17 14:30:21 by ewehl         ########   odam.nl         */
+/*   Created: 2022/10/17 17:11:00 by ewehl         #+#    #+#                 */
+/*   Updated: 2022/10/17 20:21:21 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+t_list	*ft_lstnew(void *content)
 {
-	while (*s != (unsigned char) c)
-	{
-		if (*s == '\0')
-			return (NULL);
-		s++;
-	}
-	return ((char *)s);
+	t_list	*node;
+
+	node = (t_list *)malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node -> content = content;
+	node -> next = NULL;
+	return (node);
 }
-
-// #include <string.h>
-// int main()
-// {
-//     char test[] = "Ik ben supercool.";
-//     int t = 'o' + 256;
-
-//     printf("O: %s\n", strchr(test, t));
-//     printf("M: %s\n", ft_strchr(test, t));
-//     return (0);
-// }

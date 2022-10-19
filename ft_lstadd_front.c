@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strchr.c                                        :+:    :+:            */
+/*   ft_lstadd_front.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/06 15:56:04 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/17 14:30:21 by ewehl         ########   odam.nl         */
+/*   Created: 2022/10/17 17:10:45 by ewehl         #+#    #+#                 */
+/*   Updated: 2022/10/17 20:28:15 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	while (*s != (unsigned char) c)
+	if (!new)
+		return ;
+	if (!*lst)
 	{
-		if (*s == '\0')
-			return (NULL);
-		s++;
+		(*lst) = new;
+		return ;
 	}
-	return ((char *)s);
+	new -> next = (*lst);
+	(*lst) = new;
 }
-
-// #include <string.h>
-// int main()
-// {
-//     char test[] = "Ik ben supercool.";
-//     int t = 'o' + 256;
-
-//     printf("O: %s\n", strchr(test, t));
-//     printf("M: %s\n", ft_strchr(test, t));
-//     return (0);
-// }
