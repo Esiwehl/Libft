@@ -6,7 +6,16 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 17:10:49 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/17 17:11:21 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/19 15:35:02 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if (!del || !lst)
+		return ;
+	(*del)(lst -> content);
+	free(lst);
+}
