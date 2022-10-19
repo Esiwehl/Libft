@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 17:31:38 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/19 20:20:53 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/19 20:41:12 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,47 +59,18 @@ static char	*malloc_word(char const *s, char c)
 	return (word);
 }
 
-// static void	free_me(char const *s, char **dest, char c, int *idx, int *x)
-// {
-// 	while (s[*idx] && is_delim(s[*idx], c))
-// 		s++;
-// 	if (s[*idx] && !is_delim(s[*idx], c))
-// 	{
-// 		dest[*x] = malloc_word(&s[*idx], c);
-// 		if (dest[*x] == NULL)
-// 		{
-// 			while ((*x)--)
-// 				free(dest[x]);
-// 			free(dest);
-// 			return (NULL);
-// 		}
-// 		(*x)++;
-// 		while (s[*idx] && !is_delim(s[*idx], c))
-// 			s++;
-// 	}
-// }
-
-char	**ft_split(char const *s, char c)
+static char	**body(char **dest, char const *s, char c)
 {
-	char	**dest;
-	int		words;
-	int		idx;
 	int		x;
 
-	words = get_wordc(s, c);
-	dest = (char **)malloc(sizeof(char *) * (words + 1));
-	if (!dest)
-		return (NULL);
-	idx = 0;
 	x = 0;
-	while (s[idx] != '\0')
+	while (*s != '\0')
 	{
-		// free_me(s, dest, c, idx, x);
-		while (s[idx] && is_delim(s[idx], c))
+		while (*s && is_delim(*s, c))
 			s++;
-		if (s[idx] && !is_delim(s[idx], c))
+		if (*s && !is_delim(*s, c))
 		{
-			dest[x] = malloc_word(&s[idx], c);
+			dest[x] = malloc_word(s, c);
 			if (dest[x] == NULL)
 			{
 				while (x--)
@@ -108,12 +79,24 @@ char	**ft_split(char const *s, char c)
 				return (NULL);
 			}
 			x++;
-			while (s[idx] && !is_delim(s[idx], c))
+			while (*s && !is_delim(*s, c))
 				s++;
 		}
 	}
 	dest[x] = NULL;
 	return (dest);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**dest;
+	int		words;
+
+	words = get_wordc(s, c);
+	dest = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!dest)
+		return (NULL);
+	return (body(dest, s, c));
 }
 
 // int main()
