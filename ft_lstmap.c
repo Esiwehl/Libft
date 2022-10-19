@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 17:10:57 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/19 16:58:54 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/19 21:42:26 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		tmp = ft_lstnew((*f)(lst -> content));
 		if (!tmp)
 		{
-			ft_lstclear(&tmp, del);
+			ft_lstclear(&nw_node, del);
 			return (NULL);
 		}
 		ft_lstadd_back(&nw_node, tmp);

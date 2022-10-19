@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 17:10:45 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/17 20:28:15 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/19 21:41:40 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		return ;
 	if (!*lst)
 	{
-		(*lst) = new;
+		*lst = new;
 		return ;
 	}
 	new -> next = (*lst);
-	(*lst) = new;
+	*lst = new;
 }

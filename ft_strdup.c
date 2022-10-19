@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 18:26:55 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/16 12:48:18 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/19 21:40:59 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 char	*ft_strdup(const char *s)
 {
-	char	*nstr;
-	int		idx;
-	int		len;
+	char		*nstr;
+	size_t		idx;
+	size_t		len;
 
 	idx = 0;
-	len = (int)ft_strlen(s);
+	len = ft_strlen(s);
 	nstr = (char *)malloc((len + 1) * sizeof(char));
 	if (!nstr)
 		return (NULL);
