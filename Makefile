@@ -4,18 +4,19 @@ SRCS			= 	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.
 					ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c \
 					ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
 					ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
-OBJS			= $(SRCS:.c=.o)
+OBJS			=	$(SRCS:.c=.o)
 
 BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
 					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
 					ft_lstnew.c ft_lstmap.c ft_lstsize.c
-BONUS_OBJS		= $(BONUS:.c=.o)
+BONUS_OBJS		=	$(BONUS:.c=.o)
+
+NAME			= libft.a
+HEADERF			= libft.h
 
 CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
-
-NAME			= libft.a
 
 LINKER			= ar rcs
 
@@ -24,7 +25,8 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(LINKER) $(NAME) $(OBJS)
 
-.c.o = $(CC) $(CFLAGS) $(SRCS) -o $(OBJS)
+%.o : %.c $(HEADERF)
+	$(CC) $(CFLAGS) $(SRCS) -o $(OBJS)
 
 clean :
 	$(RM) $(OBJS) $(BONUS_OBJS)
@@ -32,8 +34,7 @@ clean :
 fclean : clean
 	$(RM) $(NAME)
 
-re : 
-	fclean all
+re : fclean all
 
 bonus: $(BONUS_OBJS)
 	$(LINKER) $(NAME) $(BONUS_OBJS)
