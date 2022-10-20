@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 17:31:38 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/20 10:17:29 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/20 10:22:58 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	get_wordc(char const *s, char c)
 	return (count);
 }
 
-static char	*malln_word(char const *s, char c)
+static char	*mallnput_word(char const *s, char c)
 {
 	char	*word;
 	int		idx;
