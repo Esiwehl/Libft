@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 16:18:25 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/16 15:48:23 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/20 10:27:54 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	idx = 0;
 	if (n == 0)
 		return (0);
-	while ((s1[idx] == s2[idx]) && (idx < n - 1) && s1[idx] != '\0')
+	while (s1[idx] != '\0' && (s1[idx] == s2[idx]) && (idx < n - 1))
 		idx++;
 	return ((unsigned char) s1[idx] - (unsigned char) s2[idx]);
 }
