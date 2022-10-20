@@ -12,7 +12,7 @@ BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
 BONUS_OBJS		=	$(BONUS:.c=.o)
 
 NAME			= libft.a
-HEADERF			= libft.h
+#HEADERF			= libft.h
 
 CC				= gcc
 RM				= rm -f
@@ -25,8 +25,8 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(LINKER) $(NAME) $(OBJS)
 
-%.o : %.c $(HEADERF)
-	$(CC) $(CFLAGS) $(SRCS) -o $(OBJS)
+#%.o : %.c $(HEADERF)
+.c.o =	$(CC) $(CFLAGS) $(SRCS) -o $(OBJS)
 
 clean :
 	$(RM) $(OBJS) $(BONUS_OBJS)
