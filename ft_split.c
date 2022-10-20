@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 17:31:38 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/19 20:42:11 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/20 10:17:29 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	get_wordc(char const *s, char c)
 	return (count);
 }
 
-static char	*malloc_word(char const *s, char c)
+static char	*malln_word(char const *s, char c)
 {
 	char	*word;
 	int		idx;
@@ -59,7 +59,7 @@ static char	*malloc_word(char const *s, char c)
 	return (word);
 }
 
-static char	**body(char **dest, char const *s, char c)
+static char	**actual_splitncheck(char **dest, char const *s, char c)
 {
 	int		x;
 
@@ -70,7 +70,7 @@ static char	**body(char **dest, char const *s, char c)
 			s++;
 		if (*s && !is_delim(*s, c))
 		{
-			dest[x] = malloc_word(s, c);
+			dest[x] = mallnput_word(s, c);
 			if (dest[x] == NULL)
 			{
 				while (x--)
@@ -96,7 +96,7 @@ char	**ft_split(char const *s, char c)
 	dest = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!dest)
 		return (NULL);
-	return (body(dest, s, c));
+	return (actual_splitncheck(dest, s, c));
 }
 
 // int main()
