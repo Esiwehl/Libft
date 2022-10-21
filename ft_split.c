@@ -12,11 +12,6 @@
 
 #include "libft.h"
 
-static int	is_delim(char s, char c)
-{
-	return (s == c);
-}
-
 static int	get_wordc(char const *s, char c)
 {
 	int	count;
@@ -26,12 +21,12 @@ static int	get_wordc(char const *s, char c)
 	count = 0;
 	while (s[idx] != '\0')
 	{
-		while (s[idx] && is_delim(s[idx], c))
+		while (s[idx] && (s[idx] == c))
 			idx++;
-		if (s[idx] && !is_delim(s[idx], c))
+		if (s[idx])
 		{
 			count++;
-			while (s[idx] && !is_delim(s[idx], c))
+			while (s[idx] && (s[idx] != c))
 				idx++;
 		}
 	}
@@ -44,13 +39,13 @@ static char	*mallnput_word(char const *s, char c)
 	int		idx;
 
 	idx = 0;
-	while (s[idx] && !is_delim(s[idx], c))
+	while (s[idx] && (s[idx] != c))
 		idx++;
 	word = malloc(sizeof(char) * (idx + 1));
 	if (!word)
 		return (NULL);
 	idx = 0;
-	while (s[idx] && !is_delim(s[idx], c))
+	while (s[idx] && (s[idx] != c))
 	{
 		word[idx] = s[idx];
 		idx++;
@@ -66,9 +61,9 @@ static char	**actual_splitncheck(char **dest, char const *s, char c)
 	x = 0;
 	while (*s != '\0')
 	{
-		while (*s && is_delim(*s, c))
+		while (*s && (*s != c))
 			s++;
-		if (*s && !is_delim(*s, c))
+		if (*s && (*s!= c))
 		{
 			dest[x] = mallnput_word(s, c);
 			if (dest[x] == NULL)
@@ -79,7 +74,7 @@ static char	**actual_splitncheck(char **dest, char const *s, char c)
 				return (NULL);
 			}
 			x++;
-			while (*s && !is_delim(*s, c))
+			while (*s && (*s != c))
 				s++;
 		}
 	}

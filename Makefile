@@ -14,7 +14,7 @@ BONUS_OBJS		=	$(BONUS:.c=.o)
 NAME			= libft.a
 HEADERF			= libft.h
 
-CC				= gcc
+CC				= cc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
 
