@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 17:31:38 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/20 10:22:58 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/23 18:17:46 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ static char	**actual_splitncheck(char **dest, char const *s, char c)
 	x = 0;
 	while (*s != '\0')
 	{
-		while (*s && (*s != c))
+		while (*s && (*s == c))
 			s++;
-		if (*s && (*s!= c))
+		if (*s && (*s != c))
 		{
 			dest[x] = mallnput_word(s, c);
 			if (dest[x] == NULL)
