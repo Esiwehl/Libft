@@ -6,11 +6,25 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 17:31:38 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/23 18:17:46 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/24 11:04:08 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	**free_me(char **s, int max)
+{
+	int	idx;
+
+	idx = 0;
+	while (s[idx] && idx < max)
+	{
+		free(s[idx]);
+		idx++;
+	}
+	free(s);
+	return (NULL);
+}
 
 static int	get_wordc(char const *s, char c)
 {
@@ -67,12 +81,7 @@ static char	**actual_splitncheck(char **dest, char const *s, char c)
 		{
 			dest[x] = mallnput_word(s, c);
 			if (dest[x] == NULL)
-			{
-				while (x--)
-					free(dest[x]);
-				free(dest);
-				return (NULL);
-			}
+				return (free_me(dest, x));
 			x++;
 			while (*s && (*s != c))
 				s++;
@@ -96,15 +105,12 @@ char	**ft_split(char const *s, char c)
 
 // int main()
 // {
-// 	char str[] = "__Deze_Zin___Moet_Worden_Gesplit";
-// 	char c = '_';
+// 	char str[] = "Deze\0Zin\0Moet_Worden_Gesplit\0";
+// 	char c = '\0';
 // 	char **holder;
 
 // 	holder = ft_split(str, c);
-// 	for (size_t i = 0; i< 5; i++)
+// 	for (size_t i = 0; i< 2; i++)
 // 		printf("str[%lu] = %s\n", i, holder[i]);
 // 	free(holder);
 // }
-// get no. of words
-// get allocate mem for substr
-// put in split arr.

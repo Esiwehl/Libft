@@ -6,7 +6,7 @@
 /*   By: ewehl <ewehl@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/09 18:26:31 by ewehl         #+#    #+#                 */
-/*   Updated: 2022/10/23 19:01:21 by ewehl         ########   odam.nl         */
+/*   Updated: 2022/10/23 19:36:01 by ewehl         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	idx = 0;
 	while (idx < len && s[start])
-		substr[idx++] = s[start++];
+	{
+		substr[idx] = s[start];
+		idx++;
+		start++;
+	}
 	substr[idx] = '\0';
 	return (substr);
 }
